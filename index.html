@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>12313</title>
+  
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/5.8.5/rzslider.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <body>
+<div ng-app="App" ng-controller="Students">
+<!-- {{solutions}} -->
+<!--     <div class="col-md-2"> -->
+
+
+  <div class="wrapper">
+
+      <div class="prise">
+    <rzslider  rz-slider-model="priceSlider" ></rzslider> 
+      <br>Рейтинг студента {{Actstudent.rating}}<br> 
+    Номер компа{{pp}}
+    <button class="btnen" ng-click="SendRating1()">SendRating</button>      
+    </div>
+
+
+          <form name="myForm">
+              <label for="mySelect">Группа:</label>
+              <select name="mySelect" id="mySelect"
+                      ng-options="option.name for option in groups track by option.id"
+                      ng-model="selectedGroup"></select>
+          </form>
+          <br>option = {{groups1.selectedOption}}
+
+
+      <div class="left_block">
+          <ul>
+              <li ng-repeat="student in solutions" ng-show="student.group.id==selectedGroup.id">
+                  <input class="btnen" type="button" value={{student.username}} ng-click=user(student)>
+
+                  </input>
+              </li>
+          </ul>
+      </div>
+      <!--            "$parent.student=student" -->
+
+      <div class="centerdiv">
+          <textarea class="code" ng-model="Actstudent.code"></textarea>
+      </div>
+
+      <form name="myForm1">
+          <label for="mySelect1">Группа:</label>
+          <select name="mySelect1" id="mySelect1"
+                  ng-options="option.name for option in groups track by option.id"
+                  ng-model="Actstudent.group"></select>
+      </form>
+      <button class="btnen" ng-click="SendGroup()">SendGroup</button>
+
+
+      <!--<button class="btnen" ng-click="SendGroup()">SendGroup</button>-->
+
+
+
+
+
+      <!--     <textarea ng-repeat="student in solutions">
+         {{student.code}}
+    </textarea> -->
+    
+</div>
+</div>
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/angularjs-slider/5.8.5/rzslider.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
